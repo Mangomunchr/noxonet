@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
-<<<<<<< HEAD
 const db = require('../db');
 
+// 📊 Stats route
 router.get('/stats/:userId', async (req, res) => {
   const { userId } = req.params;
   const { rows } = await db.query(
@@ -12,6 +12,7 @@ router.get('/stats/:userId', async (req, res) => {
   res.json(rows[0]);
 });
 
+// 📈 Forecast route
 router.get('/forecast/:userId', async (req, res) => {
   const { userId } = req.params;
   const { rows } = await db.query(
@@ -22,6 +23,7 @@ router.get('/forecast/:userId', async (req, res) => {
   res.json({ credits });
 });
 
+// 💸 Claim payout
 router.post('/claim', async (req, res) => {
   const { userId } = req.body;
   const { rows } = await db.query('SELECT xp FROM users WHERE id = $1', [userId]);
@@ -31,16 +33,11 @@ router.post('/claim', async (req, res) => {
   res.json({ claimed: true });
 });
 
+// 🌤️ Weather status
 router.get('/weather', (req, res) => {
   const weathers = ['🌪️ Chaos Storm', '☀️ Clear', '🌧️ Ritual Rain', '🌑 Eclipse'];
   const current = weathers[Math.floor(Date.now() / 60000) % weathers.length];
   res.json({ weather: current });
-=======
-const { getVaultSnapshot } = require('../logic/vaultEngine');
-
-router.get('/vault/status', (req, res) => {
-  res.json(getVaultSnapshot());
->>>>>>> 865297188b33778ee0043fc41823c9663ae65614
 });
 
 module.exports = router;
