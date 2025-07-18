@@ -1,0 +1,1 @@
+// 69_FounderConsole: // Dev/admin console: mood override, chaos trigger

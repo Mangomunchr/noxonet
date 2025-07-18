@@ -1,0 +1,5 @@
+{
+  "maxStreak": 5,
+  "bonusPerStep": 5,
+  "resetAfterMinutes": 15
+}

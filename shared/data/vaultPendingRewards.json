@@ -1,0 +1,5 @@
+[
+  { "userId": "test123", "amount": 20, "unit": "XP" },
+  { "userId": "test123", "amount": 5, "unit": "credits" },
+  { "userId": "rendarling", "amount": 10, "unit": "XP" }
+]

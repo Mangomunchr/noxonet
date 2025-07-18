@@ -1,0 +1,1 @@
+// xp-meter.js - module placeholder for Layer 4

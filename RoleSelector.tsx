@@ -1,0 +1,1 @@
+export const roles = ['Renderling', 'Rendar', 'NodeMonk', 'Mythic Node'];

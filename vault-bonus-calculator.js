@@ -1,0 +1,1 @@
+// vault-bonus-calculator.js - module placeholder for Layer 4

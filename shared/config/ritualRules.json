@@ -1,0 +1,5 @@
+{
+  "maxRitualsPerHour": 3,
+  "requireAdmin": false,
+  "cooldownSeconds": 120
+}

@@ -1,0 +1,4 @@
+[
+  { "timestamp": "2025-07-15T14:00:00Z", "triggeredBy": "NodeMaster7", "reason": "Mango Surge" },
+  { "timestamp": "2025-07-16T09:30:00Z", "triggeredBy": "Pushling88", "reason": "Cooldown Violation Lock" }
+]

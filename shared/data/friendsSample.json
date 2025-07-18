@@ -1,0 +1,5 @@
+[
+  { "userId": "test123", "friend": "NodeBro88", "online": true },
+  { "userId": "test123", "friend": "RenderSis", "online": false },
+  { "userId": "rendarling", "friend": "VaultVibe", "online": true }
+]

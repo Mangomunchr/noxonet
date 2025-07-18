@@ -1,0 +1,23 @@
+{
+  "Renderling_to_Rendar": {
+    "xp": 250,
+    "job_success_rate": ">= 75%"
+  },
+  "Rendar_to_NodeMonk": {
+    "xp": 600,
+    "nsr": ">= 1400",
+    "rd": "<= 70"
+  },
+  "NodeMonk_to_God_Tier": {
+    "xp": 1200,
+    "nsr": ">= 1800",
+    "rituals": [
+      "Vaultstrike"
+    ]
+  },
+  "God_Tier_to_Godkiller": {
+    "xp": 1800,
+    "nsr": ">= 2100",
+    "burn_event": "\u2265 1k XP"
+  }
+}

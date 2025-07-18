@@ -1,0 +1,4 @@
+{
+  "authorizedUsers": ["founder", "mangomunchr"],
+  "actions": ["unlockChaos", "resetCooldowns", "boostXP"]
+}

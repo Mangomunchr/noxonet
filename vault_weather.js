@@ -1,0 +1,1 @@
+// Vault Weather Engine stub: Mango Monsoon, Chompy Eclipse

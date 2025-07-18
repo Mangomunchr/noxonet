@@ -1,0 +1,9 @@
+{
+  "rewards": {
+    "Rendar": 25,
+    "NodeMonk": 100,
+    "Ascended": 250,
+    "Mythic Node": 500
+  },
+  "badgeEnabled": true
+}

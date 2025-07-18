@@ -1,0 +1,7 @@
+{
+  "1": { "costMultiplier": 1, "baseETA": 30 },
+  "2": { "costMultiplier": 1.4, "baseETA": 20 },
+  "5": { "costMultiplier": 2, "baseETA": 12 },
+  "10": { "costMultiplier": 4, "baseETA": 7 },
+  "100": { "costMultiplier": 12, "baseETA": 2 }
+}

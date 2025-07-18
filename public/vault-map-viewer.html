@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Vault Map Viewer</title>
+  <style>
+    body { margin: 0; background: #000; overflow: hidden; }
+    canvas { display: block; width: 100vw; height: 100vh; }
+  </style>
+</head>
+<body>
+  <canvas id="vaultMap"></canvas>
+  <script>
+    const canvas = document.getElementById("vaultMap");
+    const ctx = canvas.getContext("2d");
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    let zoom = 1;
+    let offsetX = 0;
+    let offsetY = 0;
+    let dragging = false;
+    let startX, startY;
+
+    const nodes = Array.from({ length: 40 }, () => ({
+      x: Math.random() * 3000,
+      y: Math.random() * 3000
+    }));
+
+    function draw() {
+      ctx.setTransform(1, 0, 0, 1, 0, 0); // Reset transform
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.translate(offsetX, offsetY);
+      ctx.scale(zoom, zoom);
+
+      ctx.fillStyle = "#00ff99";
+      for (let node of nodes) {
+        ctx.beginPath();
+        ctx.arc(node.x, node.y, 8, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    draw();
+
+    canvas.addEventListener("wheel", (e) => {
+      e.preventDefault();
+      zoom *= e.deltaY > 0 ? 0.95 : 1.05;
+      draw();
+    });
+
+    canvas.addEventListener("mousedown", (e) => {
+      dragging = true;
+      startX = e.clientX - offsetX;
+      startY = e.clientY - offsetY;
+    });
+
+    canvas.addEventListener("mousemove", (e) => {
+      if (dragging) {
+        offsetX = e.clientX - startX;
+        offsetY = e.clientY - startY;
+        draw();
+      }
+    });
+
+    canvas.addEventListener("mouseup", () => dragging = false);
+    canvas.addEventListener("mouseleave", () => dragging = false);
+  </script>
+</body>
+</html>

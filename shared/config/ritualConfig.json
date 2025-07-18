@@ -1,0 +1,7 @@
+{
+  "cooldownRules": {
+    "Chaos Pulse": 600,
+    "Vault Rain": 300,
+    "XP Flame": 600
+  }
+}

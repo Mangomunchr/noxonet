@@ -1,0 +1,17 @@
+{
+  "base_xp_per_job": 10,
+  "vault_bonus_multiplier": {
+    "NodeMonk": 1.25,
+    "God Tier": 1.5,
+    "Mythic Tier": 2.0
+  },
+  "ritual_completion_bonus": {
+    "Vaultstrike": 100,
+    "Mango War": 150,
+    "Chaos Button Activation": 200
+  },
+  "burn_xp_conversion": {
+    "burn_100_xp": "trigger minor ritual",
+    "burn_1000_xp": "unlock class upgrade quest"
+  }
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>New GPU Job – NodeTemple</title>
+  <link rel="icon" href="/favicon.png" type="image/png"/>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet"/>
+</head>
+<body class="bg-black text-white p-6">
+  <h1 class="text-3xl font-bold mb-4">Submit a New GPU Job</h1>
+  <form id="jobForm" class="max-w-lg space-y-4">
+    <div>
+      <label class="block mb-1">Job Name</label>
+      <input type="text" name="jobName" required
+             placeholder="MyRenderJob"
+             class="w-full rounded-md bg-gray-800 border-gray-600 text-white p-2"/>
+    </div>
+    <div>
+      <label class="block mb-1">Description</label>
+      <textarea name="description" rows="4" required
+                class="w-full rounded-md bg-gray-800 border-gray-600 text-white p-2"
+                placeholder="Details about your job"></textarea>
+    </div>
+    <div>
+      <label class="block mb-1">Compute Intensity</label>
+      <select name="intensity" required class="w-full rounded-md bg-gray-800 border-gray-600 text-white p-2">
+        <option value="low">Low (1 GPU)</option>
+        <option value="medium">Medium (2–4 GPUs)</option>
+        <option value="high">High (5+ GPUs)</option>
+      </select>
+    </div>
+    <div>
+      <button type="submit"
+              class="w-full px-4 py-2 bg-green-500 rounded-lg font-semibold hover:bg-green-600 transition">
+        Submit Job
+      </button>
+    </div>
+    <div id="jobError" class="text-red-500 text-sm"></div>
+  </form>
+
+  <script>
+    document.getElementById('jobForm').addEventListener('submit', async e => {
+      e.preventDefault();
+      const err = document.getElementById('jobError');
+      err.textContent = '';
+      const data = {
+        jobName: e.target.jobName.value.trim(),
+        description: e.target.description.value.trim(),
+        intensity: e.target.intensity.value
+      };
+      try {
+        const res = await fetch('/jobs', {
+          method: 'POST',
+          headers: {'Content-Type':'application/json'},
+          body: JSON.stringify(data)
+        });
+        const text = await res.text();
+        document.body.innerHTML = `<p class="text-green-500">${text}</p>`;
+      } catch {
+        err.textContent = 'Submission failed. Try again.';
+      }
+    });
+  </script>
+</body>
+</html>

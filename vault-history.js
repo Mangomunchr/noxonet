@@ -1,0 +1,1 @@
+// vault-history.js - module placeholder for Layer 4

@@ -1,0 +1,19 @@
+.hud-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(5, 5, 15, 0.95);
+  color: #0f0;
+  font-family: monospace;
+  padding: 8px 16px;
+  display: flex;
+  gap: 20px;
+  font-size: 14px;
+  z-index: 999;
+  border-bottom: 1px solid #0f0;
+  width: 100%;
+  box-shadow: 0 2px 8px rgba(0, 255, 0, 0.2);
+}
+.hud-item {
+  white-space: nowrap;
+}

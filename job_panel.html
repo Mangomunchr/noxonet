@@ -1,0 +1,28 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Noxo Network: Job Submitter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Submit a Job to the Vault</h1>
+        <form id="jobForm">
+            <input type="text" id="jobName" placeholder="Job Name" required />
+            <input type="number" id="gpuPower" placeholder="Required GPU Power" required />
+            <select id="speedMultiplier">
+                <option value="1">1x (Standard)</option>
+                <option value="2">2x</option>
+                <option value="5">5x</option>
+                <option value="10">10x</option>
+                <option value="100" disabled>100x (Locked)</option>
+            </select>
+            <button type="submit">Submit Job</button>
+        </form>
+        <div id="activeJobs"></div>
+    </div>
+    <script src="submit.js"></script>
+</body>
+</html>

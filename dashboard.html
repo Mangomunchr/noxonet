@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dashboard – NodeTemple</title>
+  <link rel="icon" href="/favicon.png" type="image/png"/>
+
+  <!-- Tailwind CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet"/>
+
+  <!-- Leaflet CSS & JS -->
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    integrity="sha256-sA+eZNXShc9gI7jn+mO7M3sZf+Pmgl2M2RZl4jkxQ2w="
+    crossorigin=""
+  />
+  <script
+    src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+    integrity="sha256-O9N1j7n2XvphNnPJJfUkOK3Leedo+b+mOaG2XtQDr14="
+    crossorigin=""
+  ></script>
+
+  <!-- Leaflet Heatmap plugin -->
+  <script src="https://unpkg.com/leaflet.heat/dist/leaflet-heat.js"></script>
+
+  <style>
+    #map { height: 400px; border-radius: 0.5rem; }
+  </style>
+</head>
+<body class="bg-black text-white p-6">
+  <h1 class="text-4xl font-bold mb-4">Your Dashboard</h1>
+
+  <!-- Map container -->
+  <div id="map" class="mb-6"></div>
+
+  <!-- Stats section -->
+  <div id="stats" class="space-y-4">
+    <p>Loading your stats…</p>
+  </div>
+
+  <script>
+    // Initialize the Leaflet map
+    const map = L.map('map').setView([20, 0], 2);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; OpenStreetMap contributors'
+    }).addTo(map);
+
+    // 1) Fetch node locations and add markers
+    (async () => {
+      try {
+        const res = await fetch('/nodes');
+        const nodes = await res.json();
+        nodes.forEach(node => {
+          L.marker([node.lat, node.lng])
+            .addTo(map)
+            .bindPopup(`Node #${node.id}`);
+        });
+      } catch (err) {
+        console.error('Error loading nodes:', err);
+      }
+    })();
+
+    // 2) Fetch heatmap data and overlay
+    (async () => {
+      try {
+        const res = await fetch('/heatmap');
+        const points = await res.json(); // [ [lat, lng, intensity], ... ]
+        L.heatLayer(points, { radius: 25, blur: 15, maxZoom: 5 }).addTo(map);
+      } catch (err) {
+        console.error('Error loading heatmap:', err);
+      }
+    })();
+
+    // 3) Load user stats
+    (async () => {
+      const params = new URLSearchParams(location.search);
+      const email = params.get('email');
+      if (!email) {
+        document.getElementById('stats').innerHTML =
+          '<p class="text-red-500">Missing email in URL.</p>';
+        return;
+      }
+      try {
+        const res = await fetch(`/dashboard?email=${encodeURIComponent(email)}`);
+        if (!res.ok) throw new Error(await res.text());
+        const { hoursRented, totalEarned, activeNodes } = await res.json();
+        document.getElementById('stats').innerHTML = `
+          <p><strong>Active GPU Nodes:</strong> ${activeNodes}</p>
+          <p><strong>Hours Rented:</strong> ${hoursRented}</p>
+          <p><strong>Total Earned:</strong> ${totalEarned} ETH</p>
+        `;
+      } catch (err) {
+        document.getElementById('stats').innerHTML =
+          '<p class="text-red-500">Error loading stats.</p>';
+      }
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,1 @@
+// Top rotating banner with Chaos Forecast + ritual alerts

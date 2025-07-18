@@ -1,0 +1,32 @@
+{
+  "nsr_rating": {
+    "Renderling": [
+      0,
+      899
+    ],
+    "Rendar": [
+      900,
+      1399
+    ],
+    "NodeMonk": [
+      1400,
+      1799
+    ],
+    "God Tier": [
+      1800,
+      2099
+    ],
+    "Godkiller Tier": [
+      2100,
+      9999
+    ]
+  },
+  "rd_thresholds": {
+    "low_rd_bonus": "<50 RD \u2192 unlock Vaultstrike access",
+    "high_rd_penalty": ">100 RD \u2192 vault share decay"
+  },
+  "volatility_usage": {
+    "Chaosborn Access": "Volatility > 0.1",
+    "Stable Vault Role": "Volatility < 0.05"
+  }
+}

@@ -1,0 +1,1 @@
+// script.js with NodeSoul Chronicle, Weather Engine, Ritual triggers

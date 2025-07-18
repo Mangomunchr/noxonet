@@ -1,0 +1,8 @@
+{
+  "displayWhileActive": true,
+  "defaultEvent": {
+    "active": false,
+    "name": "",
+    "description": ""
+  }
+}

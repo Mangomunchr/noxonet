@@ -1,0 +1,5 @@
+[
+  { "id": "r1", "name": "XP Surge", "description": "Boost XP gain for 5 minutes" },
+  { "id": "r2", "name": "Cooldown Cleanse", "description": "Remove chaos cooldowns" },
+  { "id": "r3", "name": "Mythic Ping", "description": "Signal all Mythic Nodes" }
+]

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Verify Account – NodeTemple</title>
+<link rel="icon" href="/favicon.png" type="image/png"/>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet"/>
+</head>
+<body class="bg-black text-white p-6 max-w-xl mx-auto">
+  <h1 class="text-4xl font-bold mb-4">Verifying…</h1>
+  <div id="status" class="mt-4"></div>
+  <script>
+    (async () => {
+      const params = new URLSearchParams(location.search);
+      const token = params.get('token');
+      const res = await fetch('/verify', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ token })
+      });
+      const status = document.getElementById('status');
+      if (res.ok) {
+        status.innerHTML = '<p class="text-green-500">Your email is now verified! <a href="/login.html" class="underline">Log in</a></p>';
+      } else {
+        const txt = await res.text();
+        status.innerHTML = `<p class="text-red-500">Verification failed: ${txt}</p>`;
+      }
+    })();
+  </script>
+</body>
+</html>

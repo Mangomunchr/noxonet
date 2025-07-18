@@ -1,0 +1,1 @@
+// UI overlay for locked rituals

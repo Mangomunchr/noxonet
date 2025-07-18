@@ -1,0 +1,59 @@
+{
+  "engine_name": "Cool Beans Vault",
+  "operator_id": "mangomunchr",
+  "actions": {
+    "sendCoolBeans": {
+      "description": "Send credits",
+      "params": {
+        "user_id": "string",
+        "amount": "integer"
+      },
+      "access": "operator_only"
+    },
+    "burnXP": {
+      "description": "Burn XP",
+      "params": {
+        "user_id": "string",
+        "amount": "integer"
+      },
+      "access": "operator_only"
+    },
+    "blessUser": {
+      "description": "Grants XP",
+      "params": {
+        "user_id": "string"
+      },
+      "access": "operator_only"
+    },
+    "testLoyalty": {
+      "description": "Loyalty trial",
+      "params": {
+        "user_id": "string"
+      },
+      "access": "operator_only"
+    },
+    "viewSoul": {
+      "description": "View NodeSoul stats",
+      "params": {
+        "user_id": "string"
+      },
+      "access": "operator_only"
+    }
+  },
+  "founder_vault": {
+    "source_flows": [
+      "7% siphon",
+      "decay reroute",
+      "chaos tax",
+      "mango donations"
+    ],
+    "visibility": "private",
+    "burn_permission": true,
+    "distribution_permission": true
+  },
+  "audit": {
+    "codex_logging": "hidden_tagged",
+    "public_visibility": false,
+    "override_available": true
+  }
+}

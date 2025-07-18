@@ -1,0 +1,1 @@
+// vault-weather.js - module placeholder for Layer 4

@@ -1,0 +1,5 @@
+[
+  { "userId": "test123", "amount": 15, "reason": "Job Completed", "timestamp": "2025-07-15T14:00:00Z" },
+  { "userId": "test123", "amount": 10, "reason": "Chaos Bonus", "timestamp": "2025-07-15T14:05:00Z" },
+  { "userId": "rendarling", "amount": 8, "reason": "Rendar Submission", "timestamp": "2025-07-15T15:00:00Z" }
+]

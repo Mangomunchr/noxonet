@@ -1,0 +1,1 @@
+// mango-lock.js - module placeholder for Layer 4

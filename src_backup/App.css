@@ -1,0 +1,7 @@
+import RoleRouter from './components/RoleRouter'
+
+function App() {
+  return <RoleRouter />
+}
+
+export default App

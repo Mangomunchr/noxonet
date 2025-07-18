@@ -1,0 +1,1 @@
+// job-queue-visualizer.js - module placeholder for Layer 4

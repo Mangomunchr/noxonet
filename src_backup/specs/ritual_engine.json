@@ -1,0 +1,62 @@
+{
+  "rituals": {
+    "Vaultstrike": {
+      "trigger": {
+        "min_node_uptime_percent": 90,
+        "min_node_count": 100,
+        "low_rd_required": true,
+        "cooldown_hours": 72
+      },
+      "rewards": {
+        "xp_all_nodes": 100,
+        "sigil_chance": 0.15,
+        "vault_multiplier": 1.5
+      },
+      "world_state_flags": [
+        "vaultstrike_active"
+      ]
+    },
+    "MangoWar": {
+      "trigger": {
+        "vault_overflow": true,
+        "min_rendars_active": 200,
+        "summon_jobs_requested": 300,
+        "cooldown_hours": 120
+      },
+      "rewards": {
+        "top_10_nodes_bonus": 300,
+        "participation_xp": 50,
+        "chaosborn_boost": 1.2
+      },
+      "world_state_flags": [
+        "mango_war_ongoing"
+      ]
+    },
+    "ChaosButton": {
+      "trigger": {
+        "manual_admin_override": true,
+        "volatility_avg_above": 0.09,
+        "xp_burned_last_hour": 5000,
+        "cooldown_hours": 168
+      },
+      "rewards": {
+        "chaos_mode_unlocked": true,
+        "random_lore_events": true,
+        "node_soul_fluctuation": true
+      },
+      "world_state_flags": [
+        "chaos_mode"
+      ]
+    }
+  },
+  "shared_conditions": {
+    "min_ranking_tier": "Rendar",
+    "ritual_log_required": true,
+    "echo_verification_passed": true
+  },
+  "world_flags": {
+    "vaultstrike_active": false,
+    "mango_war_ongoing": false,
+    "chaos_mode": false
+  }
+}
