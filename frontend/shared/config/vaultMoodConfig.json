@@ -1,0 +1,4 @@
+{
+  "rotationIntervalMinutes": 120,
+  "affects": ["xpRate", "chaosRisk", "cooldownBoosts"]
+}

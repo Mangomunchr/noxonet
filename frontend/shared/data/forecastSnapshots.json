@@ -1,0 +1,4 @@
+[
+  { "timestamp": "2025-07-15T08:00:00Z", "load": 34, "risk": "Low" },
+  { "timestamp": "2025-07-15T14:00:00Z", "load": 78, "risk": "High" }
+]

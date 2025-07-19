@@ -1,0 +1,1 @@
+// Visual representation of chaos map with glowing zones

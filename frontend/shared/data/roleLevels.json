@@ -1,0 +1,6 @@
+{
+  "Renderling": { "startXP": 0, "threshold": 100 },
+  "Rendar": { "startXP": 100, "threshold": 500 },
+  "NodeMonk": { "startXP": 500, "threshold": 1000 },
+  "Mythic": { "startXP": 1000, "threshold": 9999 }
+}

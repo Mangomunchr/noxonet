@@ -1,0 +1,5 @@
+{
+  "maxCapacity": 1337,
+  "rewardType": "credit",
+  "distributionFrequency": "daily"
+}

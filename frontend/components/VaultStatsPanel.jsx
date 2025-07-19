@@ -1,0 +1,1 @@
+// React component for displaying live vault XP, streak, and guardian state

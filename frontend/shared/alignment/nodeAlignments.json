@@ -1,0 +1,12 @@
+{
+  "test123": {
+    "alignment": "Disciplined",
+    "discipline": 92,
+    "commentary": "Shows extreme focus and ritual consistency. Eligible for sacred scroll unlock."
+  },
+  "chaosling": {
+    "alignment": "Drifter",
+    "discipline": 38,
+    "commentary": "Often strays from core path. Ritual timing erratic, caution recommended."
+  }
+}

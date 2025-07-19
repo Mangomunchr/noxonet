@@ -1,0 +1,1 @@
+// Logs feed of rituals, chaos, guardian approvals, payout results

@@ -1,0 +1,5 @@
+[
+  { "type": "Flashstorm", "severity": "High", "eta": "00:04" },
+  { "type": "Null Aura", "severity": "Low", "eta": "00:13" },
+  { "type": "Vaultquake", "severity": "Critical", "eta": "00:22" }
+]

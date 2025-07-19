@@ -1,0 +1,8 @@
+{
+  "loadThresholds": {
+    "low": 30,
+    "moderate": 60,
+    "high": 90
+  },
+  "recommendationLogic": "load-based dynamic scaling"
+}

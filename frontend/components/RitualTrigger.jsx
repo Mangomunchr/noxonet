@@ -1,0 +1,1 @@
+// Chaos ritual logger trigger

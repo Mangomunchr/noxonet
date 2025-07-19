@@ -1,0 +1,5 @@
+[
+  { "userId": "test123", "timestamp": "2025-07-15T11:00:00Z", "type": "donated", "amount": 25, "unit": "XP" },
+  { "userId": "test123", "timestamp": "2025-07-16T08:00:00Z", "type": "vault tap", "amount": 14, "unit": "credits" },
+  { "userId": "rendarling", "timestamp": "2025-07-15T13:00:00Z", "type": "donated", "amount": 10, "unit": "XP" }
+]

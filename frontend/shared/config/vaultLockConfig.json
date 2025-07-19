@@ -1,0 +1,7 @@
+{
+  "lockThreshold": {
+    "load": 85,
+    "chaosChain": true,
+    "manualOverride": true
+  }
+}

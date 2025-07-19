@@ -1,0 +1,5 @@
+{
+  "maxLoad": 100,
+  "chaosThreshold": 70,
+  "availableSpeeds": [1, 2, 5, 10, 100]
+}

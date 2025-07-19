@@ -1,0 +1,4 @@
+[
+  { "id": "c1", "name": "Vault Burn Surge", "effect": "xpBoost" },
+  { "id": "c2", "name": "Node Frenzy", "effect": "multiNodeSpawn" }
+]
